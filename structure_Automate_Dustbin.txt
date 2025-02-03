@@ -1,0 +1,50 @@
+📂 automated_dustbin/         # Root directory
+│── 📂 src/                   # Source code folder
+│   │── 📂 components/        # Core ML/DL components
+│   │   │── data_ingestion.py       # Fetches data from sensors, camera, APIs, or DB
+│   │   │── data_preprocessing.py   # Cleans and preprocesses images/videos
+│   │   │── model_training.py       # Trains YOLO and KNN models for detection & classification
+│   │   │── model_evaluation.py     # Evaluates models (mAP, precision, recall)
+│   │   │── model_prediction.py     # Performs real-time detection and classification
+│   │   │── model_registry.py       # Stores trained models for version control
+│   │   │── model_monitoring.py     # Monitors model drift and accuracy in real-time
+│   │   │── model_retraining.py     # Retrains models when performance drops
+│   │── 📂 pipelines/         # ML/DL pipelines
+│   │   │── training_pipeline.py    # Full pipeline from data ingestion to model training
+│   │   │── prediction_pipeline.py  # Real-time inference pipeline
+│   │   │── monitoring_pipeline.py  # Logs detection performance and sends alerts
+│   │   │── retraining_pipeline.py  # Retrains the model when drift is detected
+│   │── 📂 config/            # Configuration settings
+│   │   │── model_config.yaml       # YOLO hyperparameters, KNN settings
+│   │   │── db_config.yaml          # Database config (MongoDB/PostgreSQL)
+│   │   │── hyperparameters.yaml    # Tuning parameters for models
+│   │── 📂 utils/             # Helper functions
+│   │   │── logger.py              # Custom logging utility
+│   │   │── config_utils.py         # Reads YAML/JSON config files
+│   │   │── file_utils.py           # Handles dataset loading/saving
+│── 📂 data/                  # Dataset storage
+│   │── raw/                  # Raw images, sensor data, videos
+│   │── processed/            # Preprocessed images & structured datasets
+│── 📂 notebooks/             # Jupyter Notebooks for EDA and experiments
+│── 📂 artifacts/             # Stores trained models and logs
+│   │── trained_yolo_model.pt        # YOLOv8 trained model weights
+│   │── trained_knn_model.pkl        # KNN trained model
+│   │── logs/                        # Logs for training & inference
+│── 📂 logs/                  # Logs directory for debugging
+│   │── model_training_logs/         # Logs for training runs
+│   │── detection_logs/               # Logs for object detection
+│── 📂 tests/                 # Unit tests for modules
+│   │── test_data_ingestion.py      # Tests data ingestion logic
+│   │── test_model_training.py      # Tests training pipeline
+│   │── test_model_monitoring.py    # Tests monitoring & alerting system
+│── 📂 deployment/            # Deployment setup
+│   │── Dockerfile            # Containerizes the application
+│   │── requirements.txt      # Dependencies list (FastAPI, YOLO, OpenCV)
+│   │── app.py                # FastAPI app for serving real-time inference
+│   │── 📂 ci_cd/             # CI/CD pipeline
+│   │   │── github_actions.yaml     # GitHub Actions for automated deployment
+│── 📂 venv/                  # Virtual environment
+│── README.md                 # Project documentation
+│── setup.py                  # Python package setup
+│── .gitignore                # Ignore unnecessary files
+│── .env                      # Environment variables (API keys, DB credentials)
